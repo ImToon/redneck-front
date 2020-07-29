@@ -1,19 +1,7 @@
 <div id="top_refresh" class="con">
     <mat-progress-spinner *ngIf="isLoading" mode="indeterminate" [diameter]="30" class="loading"></mat-progress-spinner>
 
-    <div class="add">
-        <button mat-fab class="black" color="warn" (click)="goToNewQuote()">
-          <mat-icon>add</mat-icon>
-        </button>
-    </div>
-
-    <div class="logout">
-        <button mat-fab color="warn" (click)="openDialog()">
-          <mat-icon>power_settings_new</mat-icon>
-        </button>
-    </div>
-
-    <div class="empty" *ngIf="quotes.length === 0">
+    <div class="empty" *ngIf="quotes.length === 0 && !isLoading">
         There's currently no quote posted, you can add your own one or eventually refresh BG ♥
     </div>
 
@@ -27,5 +15,17 @@
         <!-- <div class="quoteContent">
             Rating coming soon
         </div> -->
+    </div>
+
+    <div class="add">
+        <button mat-fab class="black" color="warn" (click)="goToNewQuote()">
+          <mat-icon>add</mat-icon>
+        </button>
+    </div>
+
+    <div class="logout">
+        <button mat-fab color="warn" (click)="openDialog()">
+          <mat-icon>power_settings_new</mat-icon>
+        </button>
     </div>
 </div>
