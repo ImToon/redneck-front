@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
   constructor(private authService:AuthService, private api:ApiService, private router:Router, private dialog:MatDialog) { }
 
   ngOnInit() {
-    
     // PullToRefresh.init({
     //   mainElement:document.querySelector('#top_refresh'),
     //   onRefresh : ()=>{
