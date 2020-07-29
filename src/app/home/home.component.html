@@ -17,7 +17,21 @@
         </div> -->
     </div>
 
-    <div class="add">
+    <div class="footer">
+        <div class="logout">
+            <button mat-fab color="warn" (click)="openDialog()">
+              <mat-icon>power_settings_new</mat-icon>
+            </button>
+        </div>
+        
+        <div class="add">
+            <button mat-fab class="black" color="warn" (click)="goToNewQuote()">
+              <mat-icon>add</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <!-- <div class="add">
         <button mat-fab class="black" color="warn" (click)="goToNewQuote()">
           <mat-icon>add</mat-icon>
         </button>
@@ -27,5 +41,6 @@
         <button mat-fab color="warn" (click)="openDialog()">
           <mat-icon>power_settings_new</mat-icon>
         </button>
-    </div>
+    </div> -->
+    
 </div>
