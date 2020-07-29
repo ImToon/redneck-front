@@ -18,9 +18,9 @@
                 </button>
             </mat-form-field>
             <button type="button" (click)="login()" mat-raised-button class="loginButton">
-                <mat-progress-spinner *ngIf="isLoggingIn" mode="indeterminate" [diameter]="30">
+                <mat-progress-spinner *ngIf="!isLoggingIn" mode="indeterminate" [diameter]="30">
                 </mat-progress-spinner>
-                <div *ngIf="!isLoggingIn">
+                <div *ngIf="isLoggingIn">
                     Login
                 </div>
             </button>
