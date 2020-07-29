@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
       this.hasError = true;
       setTimeout(()=>this.hasError = false, 2000)
       this.isLoggingIn = false;
-      console.log(error.status)
     });
   }
 

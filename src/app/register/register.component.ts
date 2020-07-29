@@ -58,7 +58,7 @@ export class RegisterComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(RegistrationDialogComponent);
+    this.dialog.open(RegistrationDialogComponent, { disableClose: true });
   } 
 
   get uname(){
@@ -87,7 +87,6 @@ export class RegisterComponent implements OnInit {
     this.isRegistering = true;
 
     this.apiService.register(form).subscribe(confirmation => {
-      console.log(confirmation);
       this.isRegistering = false;
       this.openDialog();
     }, error => {

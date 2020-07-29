@@ -18,6 +18,9 @@ import { RegistrationDialogComponent } from './register/registration-dialog/regi
 import { HomeComponent } from './home/home.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { NewQuoteComponent } from './new-quote/new-quote.component';
+import { NewQuoteDialogComponent } from './new-quote/new-quote-dialog/new-quote-dialog.component';
+import { LogoutDialogComponent } from './home/logout-dialog/logout-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +29,12 @@ import { environment } from '../environments/environment';
     LoginComponent,
     RegisterComponent,
     RegistrationDialogComponent,
-    HomeComponent
+    HomeComponent,
+    NewQuoteComponent,
+    NewQuoteDialogComponent,
+    LogoutDialogComponent
   ],
-  entryComponents:[RegistrationDialogComponent],
+  entryComponents:[RegistrationDialogComponent, NewQuoteDialogComponent, LogoutDialogComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -44,7 +50,9 @@ import { environment } from '../environments/environment';
     MatDialogModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

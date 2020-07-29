@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 import { Credentials } from 'src/models/credentials';
 import { Token } from 'src/models/token';
 import { RegistrationForm } from 'src/models/registrationForm';
 import { AuthService } from '../auth/auth.service';
+import { Quote } from 'src/models/quote';
+import { newQuote } from 'src/models/newQuote';
 
 @Injectable({
   providedIn: 'root'
@@ -15,17 +17,42 @@ export class ApiService {
 
   constructor(private http:HttpClient, private authService:AuthService) { }
 
+  protected getHeader(){
+    return {
+      headers : new HttpHeaders({
+        "Content-Type" : "application/json",
+        "Access-Control-Allow-Origin":"*"
+      })
+    };
+  }
 
+  protected getHeaderWithAuthorization() {
+    const token = this.authService.getToken();
+    if(token == null)
+      return this.getHeader();
+    else
+      return {
+        headers : new HttpHeaders({
+          "Content-Type" : "application/json",
+          "Access-Control-Allow-Origin":"*",
+          "Authorization":token,
+        })
+      };
+  }
 
   register(registrationForm:RegistrationForm):Observable<any>{
-    return this.http.post<any>(`${this.BASE_PATH}/users/register`, registrationForm);
+    return this.http.post<any>(`${this.BASE_PATH}/users/register`, registrationForm, this.getHeader());
   }
 
   login(credentials:Credentials):Observable<Token>{
-    return this.http.post<Token>(`${this.BASE_PATH}/users/login`, credentials);
+    return this.http.post<Token>(`${this.BASE_PATH}/users/login`, credentials, this.getHeader());
   }
 
-  getQuote(page:number){
-    
+  getQuotes(page:number):Observable<Array<Quote>>{
+    return this.http.get<Array<Quote>>(`${this.BASE_PATH}/quotes?page=${page}`, this.getHeaderWithAuthorization());
+  }
+
+  postQuote(quote:newQuote):Observable<any>{
+    return this.http.post<any>(`${this.BASE_PATH}/quotes`, quote, this.getHeaderWithAuthorization());
   }
 }

@@ -1,9 +1,31 @@
-<div class="container">
-    <h2 class="waitTitle">Stay tuned boys</h2>
-    <p class="waitTitle">Updates coming soon</p>
-    <img class="waitImg" src="../../assets/wait.png"/>
-    <p>
-        <span>You can still disconnect by clicking </span>
-        <span class="disconnect" (click)="disconnect()">here</span>
-    </p>
+<div id="top_refresh" class="con" (scroll)="scrollHandler($event)">
+    <mat-progress-spinner *ngIf="isLoading" mode="indeterminate" [diameter]="30" class="loading"></mat-progress-spinner>
+
+    <div class="add">
+        <button mat-fab class="black" color="warn" (click)="goToNewQuote()">
+          <mat-icon>add</mat-icon>
+        </button>
+    </div>
+
+    <div class="logout">
+        <button mat-fab color="warn" (click)="openDialog()">
+          <mat-icon>power_settings_new</mat-icon>
+        </button>
+    </div>
+
+    <div class="empty" *ngIf="quotes.length === 0">
+        There's currently no quote posted, you can add your own one or eventually refresh BG ♥
+    </div>
+
+    <div class="card" *ngFor="let quote of quotes">
+        <div class="username">
+            {{quote.creator.username}} - {{quote.date | date:'dd/MM/yyyy HH:mm'}}
+        </div>
+        <div class="quoteContent">
+            {{quote.content}}
+        </div>
+        <!-- <div class="quoteContent">
+            Rating coming soon
+        </div> -->
+    </div>
 </div>
