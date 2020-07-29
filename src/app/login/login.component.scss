@@ -1,0 +1,106 @@
+
+$screen-sm-min: 576px;
+
+@mixin sm {
+    @media (max-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+.bg{
+    background-color: #F2F2F2;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    display: grid;
+}
+
+.container{
+    background-color: rgb(255, 255, 255);
+    width: 30%;
+    height: 70%;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    vertical-align: center;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 30% auto 15%;
+    @include sm{
+        width:80%;
+        height: 80%;
+    }
+}
+
+.logo{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+.loginButton{
+    width: 85%;
+    height: 45px;
+    margin: auto;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-family: Poppins;
+    font-size: 15px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.form{
+    align-content: center;
+    display: grid;
+    align-self: center;
+}
+
+.field{
+    width: 90%;
+    margin: auto;
+    font-family: Poppins;
+    font-weight: 500;
+}
+
+.hide{
+    background-color: white;
+    border: none;
+}
+
+.loading{
+    align-self: center;
+}
+
+.signupContainer{
+    font-size: 15px;
+    text-align: center;
+}
+
+.signupQuestion{
+    font-family: Poppins;
+    font-weight: 300;
+}
+
+.signupButton{
+    width: 50%;
+    height: 45px;
+    border-radius: 20px;
+    font-family: Poppins;
+    font-size: 15px;
+}
+
+mat-icon{
+    color:#696464
+}
+
+.errorMessage{
+    height: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #c71212;
+    font-weight: 400;
+    font-family: Poppins;
+}

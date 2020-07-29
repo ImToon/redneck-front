@@ -1,0 +1,5 @@
+✔ Display error if wrong credentials on login @done(20-07-29 04:16)
+✔ Display error if account unknown on login @done(20-07-29 04:16)
+✔ Registration error : email already taken @done(20-07-29 04:25)
+✔ Registration error : username already taken @done(20-07-29 04:25)
+☐ transition between screens

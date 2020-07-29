@@ -1,0 +1,28 @@
+.container{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    font-family: Poppins;
+}
+
+.waitTitle{
+    text-align: center;
+}
+
+.div.inline{
+    float: left;
+}
+
+.waitImg{
+    margin: auto;
+    width: 200px;
+    height: 180px;
+    margin-bottom: 16px;
+}
+
+.disconnect{
+    font-weight: bold;
+    text-decoration: underline;
+}

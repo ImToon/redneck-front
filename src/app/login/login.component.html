@@ -1,0 +1,38 @@
+<div class="bg">
+    <div class="container">
+        <img class="logo" src="../../assets/beau.png" />
+
+        <form class="form">
+            <div class="errorMessage" *ngIf="hasError">
+                <span>Wrong credentials</span>
+            </div>
+            <mat-form-field appearance="legacy" class="field">
+                <mat-label>Username</mat-label>
+                <input [value]="username" (input)="username=$event.target.value" matInput>
+            </mat-form-field>
+            <mat-form-field appearance="legacy" class="field">
+                <mat-label>Password</mat-label>
+                <input [value]="password" (input)="password=$event.target.value" matInput [type]="hide ? 'password' : 'text'">
+                <button type="button" class="hide" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <button type="button" (click)="login()" mat-raised-button class="loginButton">
+                <mat-progress-spinner *ngIf="isLoggingIn" mode="indeterminate" [diameter]="30">
+                </mat-progress-spinner>
+                <div *ngIf="!isLoggingIn">
+                    Login
+                </div>
+            </button>
+        </form>
+
+        <div class="signupContainer">
+           <div class="signupQuestion">Don't have an account ?</div>
+            <button type="button" routerLink="/register" mat-raised-button class="signupButton">
+                <div>
+                    Sign up
+                </div>
+            </button>
+        </div>
+    </div>
+</div>

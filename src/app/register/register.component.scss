@@ -1,0 +1,89 @@
+$screen-sm-min: 576px;
+
+@mixin sm {
+    @media (max-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+.bg{
+    background-color: #F2F2F2;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    display: grid;
+}
+
+.container{
+    background-color: rgb(255, 255, 255);
+    width: 30%;
+    height: 70%;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    vertical-align: center;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 30% 60% auto;
+    @include sm{
+        width:80%;
+        height: 80%;
+    }
+}
+
+.top{
+    justify-items: center;
+    align-items: center;
+    display: grid;
+}
+
+.logo{
+    width: 125px;
+    height: 125px;
+    margin: auto;
+}
+
+.zebi{
+    font-family: Poppins;
+    font-size: 20px;
+}
+
+.field{
+    width: 90%;
+    margin: auto;
+    font-family: Poppins;
+    font-weight: 500;
+}
+
+.form{
+    align-content: center;
+    display: grid;
+    align-self: center;
+}
+
+.registerButton{
+    width: 85%;
+    height: 45px;
+    margin: auto;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-family: Poppins;
+    font-size: 15px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+mat-icon{
+    color:#696464
+}
+
+.errorMessage{
+    height: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #c71212;
+    font-weight: 400;
+    font-family: Poppins;
+}

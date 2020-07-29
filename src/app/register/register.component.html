@@ -1,0 +1,66 @@
+<div class="bg">
+    <div class="container">
+        <div class="top">
+            <img class="logo" src="../../assets/beau.png" />
+            <p class="zebi">Welcome zebi</p>
+        </div>
+
+        <form class="form" [formGroup]="registerForm">
+            <div class="errorMessage">
+                <span>{{errorMessage}}</span>
+            </div>
+            <mat-form-field appearance="legacy" class="field">
+                <mat-label>Username</mat-label>
+                <input [value]="username" (input)="username=$event.target.value" matInput formControlName="username">
+                <div *ngIf="(uname.invalid && uname.touched) || uname.dirty">
+                    <small *ngIf="uname.errors?.required" class="text-danger">Username is required</small>
+                    <small *ngIf="uname.errors?.minlength" class="text-danger">Minimum 5 characters</small>
+                </div>
+            </mat-form-field>
+
+            <mat-form-field appearance="legacy" class="field">
+                <mat-label>Password</mat-label>
+                <input [value]="password" (input)="password=$event.target.value" matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password">
+                <div *ngIf="(pwd.invalid && pwd.touched) || pwd.dirty">
+                    <small *ngIf="pwd.errors?.required" class="text-danger">Password is required</small>
+                    <small *ngIf="pwd.errors?.minlength" class="text-danger">Minimum 6 characters</small>
+                </div>
+                <button type="button" mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+                    <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <mat-form-field appearance="legacy" class="field">
+                <mat-label>Confirm password</mat-label>
+                <input (focus)="confirmHasFocus=true" (blur)="confirmHasFocus=false" [value]="confirmPassword" (input)="confirmPassword=$event.target.value" matInput [type]="hideConfirmPassword ? 'password' : 'text'" formControlName="confirmPassword">
+                <div *ngIf="(confirmPwd.invalid && confirmPwd.touched) || confirmPwd.dirty">
+                    <small *ngIf="confirmPwd.errors?.required" class="text-danger"> Confirm password is required </small>
+                    <small *ngIf="confirmPwd.errors?.minlength && !confirmHasFocus" class="text-danger"> Minimum 6 characters </small>
+                    <small *ngIf="pwd.touched && registerForm.hasError('notSame') && !confirmPwd.errors?.required" class="text-danger"> Passwords don't match </small>
+                </div>
+                <button type="button"mat-icon-button matSuffix (click)="hideConfirmPassword = !hideConfirmPassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirmPassword">
+                    <mat-icon>{{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <mat-form-field appearance="legacy" class="field">
+                <mat-label>Email</mat-label>
+                <input [value]="email" (input)="email=$event.target.value" matInput formControlName="email">
+                <div *ngIf="(mail.invalid && mail.touched) || mail.dirty">
+                    <small *ngIf="mail.errors?.required" class="text-danger"> Email is required </small>
+                    <small *ngIf="mail.errors?.email" class="text-danger"> Invalid email </small>
+                </div>
+            </mat-form-field>
+
+            <button type="button" (click)="register()" mat-raised-button class="registerButton" [disabled]="!registerForm.valid">
+                <mat-progress-spinner *ngIf="isRegistering" mode="indeterminate" [diameter]="30">
+                </mat-progress-spinner>
+                <div *ngIf="!isRegistering">
+                    Register
+                </div>
+            </button>
+
+        </form>
+
+    </div>
+</div>
