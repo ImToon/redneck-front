@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['new-quote']);
   }
 
-  @HostListener("window:scroll", ["$event"])
+  @HostListener("window:scroll")
   onWindowScroll() {
     let pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
     let max = document.documentElement.scrollHeight;
