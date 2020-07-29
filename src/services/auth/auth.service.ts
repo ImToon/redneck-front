@@ -14,6 +14,10 @@ export class AuthService {
     localStorage.setItem(this.TOKEN_KEY, token);
   }
 
+  public getToken():string{
+    return localStorage.getItem(this.TOKEN_KEY);
+  }
+
   public disconnect():void{
     localStorage.removeItem(this.TOKEN_KEY);
     this.router.navigate(['login']);
