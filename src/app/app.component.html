@@ -21,6 +21,6 @@
     </div>
 </nav>
 
-<div id="root_container">
+<div id="root_container" [ngStyle]="{'padding-top': (authService.isAuthenticated()) ? '65px' : '0px'}">
     <router-outlet></router-outlet>
 </div>
