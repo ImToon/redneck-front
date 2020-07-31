@@ -5,42 +5,13 @@
         There's currently no quote posted, you can add your own one or eventually refresh BG ♥
     </div>
 
-    <div class="card" *ngFor="let quote of quotes">
-        <div class="username">
-            {{quote.creator.username}} - {{quote.date | date:'dd/MM/yyyy HH:mm'}}
-        </div>
-        <div class="quoteContent">
-            {{quote.content}}
-        </div>
-        <!-- <div class="quoteContent">
-            Rating coming soon
-        </div> -->
+    <div class="add" routerLink="/new-quote">
+        <mat-icon class="align-middle">add</mat-icon>
+        <span class="align-middle">Add a new quote</span>
     </div>
 
-    <div class="footer">
-        <div class="logout">
-            <button mat-fab color="warn" (click)="openDialog()">
-              <mat-icon>power_settings_new</mat-icon>
-            </button>
-        </div>
-        
-        <div class="add">
-            <button mat-fab class="black" color="warn" (click)="goToNewQuote()">
-              <mat-icon>add</mat-icon>
-            </button>
-        </div>
+    <div *ngFor="let quote of quotes">
+        <app-quote [quote]="quote"></app-quote>
     </div>
-
-    <!-- <div class="add">
-        <button mat-fab class="black" color="warn" (click)="goToNewQuote()">
-          <mat-icon>add</mat-icon>
-        </button>
-    </div>
-
-    <div class="logout">
-        <button mat-fab color="warn" (click)="openDialog()">
-          <mat-icon>power_settings_new</mat-icon>
-        </button>
-    </div> -->
     
 </div>

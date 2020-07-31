@@ -1,0 +1,49 @@
+<div *ngIf="quote" class="con">
+    <div class="card">
+
+        <div class="com_container">
+            <div class="username">
+                {{quote.creator.username}} - {{quote.date | date:'dd/MM/yyyy HH:mm'}}
+            </div>
+            <div class="quoteContent">
+                {{quote.content}}
+            </div>
+            <div class="rating">
+                <div class="quote_mark">
+                    <span>{{quote.pos}}</span>
+                    <mat-icon class="rate_icon rate_plus" (click)="rate(true)">add</mat-icon>
+                </div>
+                <div class="quote_mark">
+                    <span>{{quote.neg}}</span>
+                    <mat-icon class="rate_icon rate_plus" (click)="rate(false)">remove</mat-icon>
+                </div>
+                <div class="share">
+                    <mat-icon class="rate_icon" (click)="share()">share</mat-icon>
+                </div>
+            </div>
+        </div>
+
+        <hr/>
+
+        <div class="comments_section">
+            <div>Comments</div>
+
+            <mat-form-field appearance="legacy" class="comment_input">
+                <mat-label>Your comment</mat-label>
+                <textarea matInput [value]="comment" (input)="comment=$event.target.value"></textarea>
+                <!-- <textarea matInput [value]="comment" (input)="comment=$event.target.value" autoFocus [wantsFocus]="wantToComment"></textarea> -->
+                <mat-icon matSuffix class="send" (click)="postComment()">send</mat-icon>
+            </mat-form-field>
+
+        </div>
+
+        <div class="comment_card" *ngFor="let comment of quote.comments">
+            <div class="username">
+                {{comment.author.username}} - {{comment.date | date:'dd/MM/yyyy HH:mm'}}
+            </div>
+            <div class="comment_content">
+                {{comment.content}}
+            </div>
+        </div>
+    </div>
+</div>

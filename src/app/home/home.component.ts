@@ -47,14 +47,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  openDialog() {
-    this.dialog.open(LogoutDialogComponent, { disableClose: true });
-  } 
-
-  goToNewQuote(){
-    this.router.navigate(['new-quote']);
-  }
-
   @HostListener("window:scroll")
   onWindowScroll() {
     let pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
@@ -67,9 +59,5 @@ export class HomeComponent implements OnInit {
       });
     }
   }
-
-  disconnect(){
-    this.authService.disconnect();
-  }
-
+  
 }

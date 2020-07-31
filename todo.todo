@@ -1,5 +1,18 @@
+//Order by priority
+
 ✔ Display error if wrong credentials on login @done(20-07-29 04:16)
 ✔ Display error if account unknown on login @done(20-07-29 04:16)
 ✔ Registration error : email already taken @done(20-07-29 04:25)
 ✔ Registration error : username already taken @done(20-07-29 04:25)
+✔ Give a note to a quote (+/-) @done(20-07-31 02:45)
+✔ Link to a specific quote @done(20-07-31 02:45)
+✔ Page to display a single quote @done(20-07-31 02:45)
+✔ Rework design w/ a bottom nav bar or hamburger menu @done(20-07-31 02:45)
+☐ Rework paging w/ explicit page number
+☐ Configure PWA and provide information to install it
+✔ Give a comment ? @done(20-07-31 02:45)
+☐ Ranking
+☐ Leaderboard
+☐ Top 10
+☐ Add WS?
 ☐ transition between screens

@@ -48,11 +48,27 @@ export class ApiService {
     return this.http.post<Token>(`${this.BASE_PATH}/users/login`, credentials, this.getHeader());
   }
 
+  getQuoteById(id:string):Observable<Quote>{
+    return this.http.get<Quote>(`${this.BASE_PATH}/quotes/${id}`, this.getHeaderWithAuthorization());
+  }
+
+  getQuoteByIdWithComments(id:string):Observable<Quote>{
+    return this.http.get<Quote>(`${this.BASE_PATH}/quotes/${id}?withComments=true`, this.getHeaderWithAuthorization());
+  }
+
   getQuotes(page:number):Observable<Array<Quote>>{
     return this.http.get<Array<Quote>>(`${this.BASE_PATH}/quotes?page=${page}`, this.getHeaderWithAuthorization());
   }
 
   postQuote(quote:newQuote):Observable<any>{
     return this.http.post<any>(`${this.BASE_PATH}/quotes`, quote, this.getHeaderWithAuthorization());
+  }
+
+  commentQuote(quoteId:string, comment:string):Observable<any>{
+    return this.http.post<any>(`${this.BASE_PATH}/quotes/${quoteId}/comment`, {content:comment}, this.getHeaderWithAuthorization());
+  }
+
+  rateQuote(quoteId:string, mark:boolean):Observable<any>{
+    return this.http.post<any>(`${this.BASE_PATH}/quotes/${quoteId}/rate`, {mark:mark}, this.getHeaderWithAuthorization());
   }
 }

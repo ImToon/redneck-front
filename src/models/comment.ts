@@ -2,10 +2,8 @@ import { User } from './user';
 
 export interface Quote{
     _id:string;
-    creator:User;
+    author:User;
     content:string;
+    quote:Quote;
     date:Date;
-    pos:number;
-    neg:number;
-    comments?:Array<Comment>;
 }

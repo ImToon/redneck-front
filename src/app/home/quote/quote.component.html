@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="username" (click)="goToQuote()">
+        {{quote.creator.username}} - {{quote.date | date:'dd/MM/yyyy HH:mm'}}
+    </div>
+    <div class="quoteContent" (click)="goToQuote()">
+        {{quote.content}}
+    </div>
+    <div class="rating">
+        <div class="quote_mark">
+            <span>{{quote.pos}}</span>
+            <mat-icon class="rate_icon rate_plus" (click)="rate(true)">add</mat-icon>
+        </div>
+        <div class="quote_mark">
+            <span>{{quote.neg}}</span>
+            <mat-icon class="rate_icon rate_plus" (click)="rate(false)">remove</mat-icon>
+        </div>
+        <div class="quote_mark">
+            <mat-icon class="rate_icon comment" (click)="comment()">comment</mat-icon>
+        </div>
+        <div class="share">
+            <mat-icon class="rate_icon" (click)="share()">share</mat-icon>
+        </div>
+    </div>
+</div>

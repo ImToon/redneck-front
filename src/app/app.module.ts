@@ -21,10 +21,17 @@ import { environment } from '../environments/environment';
 import { NewQuoteComponent } from './new-quote/new-quote.component';
 import { NewQuoteDialogComponent } from './new-quote/new-quote-dialog/new-quote-dialog.component';
 import { LogoutDialogComponent } from './home/logout-dialog/logout-dialog.component';
+import { QuoteComponent } from './home/quote/quote.component';
+import { QuoteDetailsComponent } from './quote-details/quote-details.component';
+import {AutoFocusDirective} from './directive/auto-focus.directive';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ShareSnackbarComponent } from './share-snackbar/share-snackbar.component';
+// import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AutoFocusDirective,
     ThemeSwitchComponent,
     LoginComponent,
     RegisterComponent,
@@ -32,9 +39,12 @@ import { LogoutDialogComponent } from './home/logout-dialog/logout-dialog.compon
     HomeComponent,
     NewQuoteComponent,
     NewQuoteDialogComponent,
-    LogoutDialogComponent
+    LogoutDialogComponent,
+    QuoteComponent,
+    QuoteDetailsComponent,
+    ShareSnackbarComponent
   ],
-  entryComponents:[RegistrationDialogComponent, NewQuoteDialogComponent, LogoutDialogComponent],
+  entryComponents:[RegistrationDialogComponent, NewQuoteDialogComponent, LogoutDialogComponent, ShareSnackbarComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -48,7 +58,8 @@ import { LogoutDialogComponent } from './home/logout-dialog/logout-dialog.compon
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    MatSnackBarModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
 

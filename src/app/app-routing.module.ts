@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuardService } from 'src/services/auth/auth-guard.service';
 import { NewQuoteComponent } from './new-quote/new-quote.component';
+import { QuoteDetailsComponent } from './quote-details/quote-details.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,11 @@ const routes: Routes = [
   {
     path:'new-quote',
     component: NewQuoteComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path:'quote/:id',
+    component: QuoteDetailsComponent,
     canActivate: [AuthGuardService]
   },
   { path: '**', redirectTo: 'home'}
