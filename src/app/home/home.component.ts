@@ -40,7 +40,6 @@ export class HomeComponent implements OnInit {
       this.isMobile = true;
 
     this.api.getQuotesWithComments(this.page).subscribe(data=>{
-      console.log(data)
       this.isLoading = false;
       this.quotes.push(...data);
       if(data.length > 0)
