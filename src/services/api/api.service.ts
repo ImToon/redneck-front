@@ -49,7 +49,7 @@ export class ApiService {
   }
 
   getQuoteById(id:string):Observable<Quote>{
-    return this.http.get<Quote>(`${this.BASE_PATH}/quotes/${id}`, this.getHeaderWithAuthorization());
+    return this.http.get<Quote>(`${this.BASE_PATH}/quotes/${id}?withComments=false`, this.getHeaderWithAuthorization());
   }
 
   getQuoteByIdWithComments(id:string):Observable<Quote>{
@@ -57,7 +57,11 @@ export class ApiService {
   }
 
   getQuotes(page:number):Observable<Array<Quote>>{
-    return this.http.get<Array<Quote>>(`${this.BASE_PATH}/quotes?page=${page}`, this.getHeaderWithAuthorization());
+    return this.http.get<Array<Quote>>(`${this.BASE_PATH}/quotes?page=${page}&withComments=false`, this.getHeaderWithAuthorization());
+  }
+
+  getQuotesWithComments(page:number):Observable<Array<Quote>>{
+    return this.http.get<Array<Quote>>(`${this.BASE_PATH}/quotes?page=${page}&withComments=true`, this.getHeaderWithAuthorization());
   }
 
   postQuote(quote:newQuote):Observable<any>{

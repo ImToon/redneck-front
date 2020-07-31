@@ -29,7 +29,7 @@ export class QuoteDetailsComponent implements OnInit {
   }
 
   copyMessage(){
-    const link = `https://www.${window.location.hostname}/quote/${this.quote._id}`
+    const link = `https://${window.location.hostname}/quote/${this.quote._id}`
     const selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';

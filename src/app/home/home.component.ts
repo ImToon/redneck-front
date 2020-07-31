@@ -39,7 +39,8 @@ export class HomeComponent implements OnInit {
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua))
       this.isMobile = true;
 
-    this.api.getQuotes(this.page).subscribe(data=>{
+    this.api.getQuotesWithComments(this.page).subscribe(data=>{
+      console.log(data)
       this.isLoading = false;
       this.quotes.push(...data);
       if(data.length > 0)

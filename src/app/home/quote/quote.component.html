@@ -6,16 +6,17 @@
         {{quote.content}}
     </div>
     <div class="rating">
-        <div class="quote_mark">
+        <div class="quote_mark" (click)="rate(true)">
             <span>{{quote.pos}}</span>
-            <mat-icon class="rate_icon rate_plus" (click)="rate(true)">add</mat-icon>
+            <mat-icon class="rate_icon rate_plus" >add</mat-icon>
         </div>
-        <div class="quote_mark">
+        <div class="quote_mark" (click)="rate(false)">
             <span>{{quote.neg}}</span>
-            <mat-icon class="rate_icon rate_plus" (click)="rate(false)">remove</mat-icon>
+            <mat-icon class="rate_icon rate_plus" >remove</mat-icon>
         </div>
-        <div class="quote_mark">
-            <mat-icon class="rate_icon comment" (click)="comment()">comment</mat-icon>
+        <div class="quote_mark" (click)="comment()">
+            <span>{{quote.comments.length}}</span>
+            <mat-icon class="rate_icon comment">comment</mat-icon>
         </div>
         <div class="share">
             <mat-icon class="rate_icon" (click)="share()">share</mat-icon>
