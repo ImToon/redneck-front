@@ -26,6 +26,7 @@ import { QuoteDetailsComponent } from './quote-details/quote-details.component';
 import {AutoFocusDirective} from './directive/auto-focus.directive';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ShareSnackbarComponent } from './share-snackbar/share-snackbar.component';
+import { UpdateService } from 'src/services/pwa-update/update.service';
 // import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
@@ -62,7 +63,7 @@ import { ShareSnackbarComponent } from './share-snackbar/share-snackbar.componen
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
-
+    UpdateService
   ],
   bootstrap: [AppComponent]
 })
