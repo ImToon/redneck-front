@@ -1,14 +1,17 @@
+$c-bg: #292929;
+$c-content-bg:#1C1C1C;
+
 .con{
     min-height: 100%;
     padding: 10px;
     font-family: Poppins;
-    background-color: #F2F2F2;
+    background-color: $c-content-bg;
 }
 
 .card{
     border-radius: 5px;
     box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    background-color: rgb(255, 255, 255);
+    background-color:$c-bg;
     width: 85%;
     // height: 80px;
     margin: auto;

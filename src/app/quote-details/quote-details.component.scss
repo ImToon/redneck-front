@@ -1,8 +1,14 @@
+$c-bg: #292929;
+$c-content-bg:#1C1C1C;
+$c-green: #52EB61;
+$c-red: #EB4343;
+
 .con{
     min-height: 100%;
     padding: 10px;
     font-family: Poppins;
-    background-color: #F2F2F2;
+    background-color: $c-bg;
+    color:white;
 }
 
 .com_contaimer{
@@ -21,12 +27,12 @@
 
 .card{
     margin-top: 15px !important;
-    border-radius: 5px;
-    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    box-shadow: 0px 0px 19px #1C1C1C;
+    background-color: $c-content-bg;
     width: 90%;
     margin: auto;
-    padding: 10px;
+    padding: 32px;
 }
 
 .username{
@@ -37,20 +43,32 @@
 .quoteContent{
     font-weight: lighter;
     font-size: 15px;
-    color:#a3a098;
+    color:white;
 }
 
 .rating{
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    display: grid;
     grid-template-columns: 25% 25% auto;
+    color: white;
 }
 
 .quote_mark{
-    display: flex;
+    display: inline-block;
     align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    &--pos {
+        background-color:$c-green;
+    }
+    &--neg {
+        background-color: $c-red;
+
+    }
 }
 
 .rate_icon{
@@ -59,6 +77,7 @@
 
 .rate_plus{
     margin-right: 10px;
+    
 }
 
 .rate_minus{
@@ -102,7 +121,8 @@ textarea{
 .comment_card{
     border-radius: 5px;
     box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    background-color: #F2F2F2;
+    background-color: #1C1C1C;
+    color:white;
     width: 90%;
     margin: auto;
     padding: 10px;
@@ -112,5 +132,5 @@ textarea{
 .comment_content{
     font-weight: lighter;
     font-size: 15px;
-    color:#5c5c5c;
+    color:white;
 }

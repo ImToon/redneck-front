@@ -13,7 +13,7 @@ import { newQuote } from 'src/models/newQuote';
   providedIn: 'root'
 })
 export class ApiService {
-  BASE_PATH:String = environment.production ? 'https://redneck-api.glitch.me/api' : 'http://localhost:5000/api';
+  BASE_PATH:String = environment.production ? 'https://redneck-api.glitch.me/api' : 'https://redneck-api.glitch.me/api';
 
   constructor(private http:HttpClient, private authService:AuthService) { }
 

@@ -10,19 +10,20 @@
             <div class="quoteContent">
                 {{quote.content}}
             </div>
-            <div class="rating">
-                <div class="quote_mark">
-                    <span>{{quote.pos}}</span>
-                    <mat-icon class="rate_icon rate_plus" (click)="rate(true)">add</mat-icon>
-                </div>
-                <div class="quote_mark">
-                    <span>{{quote.neg}}</span>
-                    <mat-icon class="rate_icon rate_plus" (click)="rate(false)">remove</mat-icon>
-                </div>
-                <div class="share">
-                    <mat-icon class="rate_icon" (click)="share()">share</mat-icon>
-                </div>
+            <div class="share">
+                <mat-icon class="rate_icon" (click)="share()">share</mat-icon>
             </div>
+        </div>
+        <div class="rating">
+            <div class="quote_mark quote_mark--pos">
+                <span>{{quote.pos}}</span>
+                
+            </div>
+            <div class="quote_mark quote_mark--neg">
+                <span>{{quote.neg}}</span>
+                
+            </div>
+
         </div>
 
         <hr/>
