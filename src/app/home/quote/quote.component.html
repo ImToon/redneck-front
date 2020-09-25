@@ -1,25 +1,38 @@
-<div class="card">
-    <div class="username" (click)="goToQuote()">
-        {{quote.creator.username}} - {{quote.date | date:'dd/MM/yyyy HH:mm'}}
-    </div>
-    <div class="quoteContent" (click)="goToQuote()">
-        {{quote.content}}
-    </div>
+<div class="card_con">
     <div class="rating">
-        <div class="quote_mark" (click)="rate(true)">
+        <div class="quote_mark quote_mark--pos" (click)="rate(true)">
             <span>{{quote.pos}}</span>
-            <mat-icon class="rate_icon rate_plus" >add</mat-icon>
         </div>
-        <div class="quote_mark" (click)="rate(false)">
+        <div class="quote_mark quote_mark--neg" (click)="rate(false)">
             <span>{{quote.neg}}</span>
-            <mat-icon class="rate_icon rate_plus" >remove</mat-icon>
         </div>
-        <div class="quote_mark" (click)="comment()">
-            <span>{{quote.comments.length}}</span>
-            <mat-icon class="rate_icon comment">comment</mat-icon>
+
+
+    </div>
+    <div class="card">
+        <div class="card__info">
+            <div class="username" (click)="goToQuote()">
+                {{quote.creator.username}}
+            </div>
+            <div class="date" (click)="goToQuote()">
+                {{quote.date | date:'dd/MM HH:mm'}}
+            </div>
         </div>
-        <div class="share">
-            <mat-icon class="rate_icon" (click)="share()">share</mat-icon>
+
+        <div class="quoteContent" (click)="goToQuote()">
+            {{quote.content}}
         </div>
+        <div class="details">
+            <div class="comment" (click)="comment()">
+                <mat-icon class="rate_icon comment__icon">comment</mat-icon>
+                <span class="comment__content">{{quote.comments.length}}</span>
+                <p class="comment__word">commentaire(s)</p>
+            </div>
+            <div class="share">
+                <mat-icon class="rate_icon" (click)="share()">share</mat-icon>
+                <p>Partager</p>
+            </div>
+        </div>
+
     </div>
 </div>

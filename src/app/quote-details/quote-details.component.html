@@ -1,6 +1,17 @@
 <mat-progress-spinner *ngIf="!quote" mode="indeterminate" [diameter]="30" class="loading"></mat-progress-spinner>
 
 <div *ngIf="quote" class="con">
+    <div class="rating">
+        <div class="quote_mark quote_mark--pos">
+            <span>{{quote.pos}}</span>
+            
+        </div>
+        <div class="quote_mark quote_mark--neg">
+            <span>{{quote.neg}}</span>
+            
+        </div>
+
+    </div>
     <div class="card">
 
         <div class="com_container">
@@ -13,17 +24,6 @@
             <div class="share">
                 <mat-icon class="rate_icon" (click)="share()">share</mat-icon>
             </div>
-        </div>
-        <div class="rating">
-            <div class="quote_mark quote_mark--pos">
-                <span>{{quote.pos}}</span>
-                
-            </div>
-            <div class="quote_mark quote_mark--neg">
-                <span>{{quote.neg}}</span>
-                
-            </div>
-
         </div>
 
         <hr/>
@@ -49,4 +49,5 @@
             </div>
         </div>
     </div>
+
 </div>

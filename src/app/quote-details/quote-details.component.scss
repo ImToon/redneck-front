@@ -33,6 +33,7 @@ $c-red: #EB4343;
     width: 90%;
     margin: auto;
     padding: 32px;
+    display: inline-block;
 }
 
 .username{
@@ -52,18 +53,21 @@ $c-red: #EB4343;
     padding-right: 10px;
     grid-template-columns: 25% 25% auto;
     color: white;
+    display: inline-block;
+    margin-right:32px;
 }
 
 .quote_mark{
-    display: inline-block;
+    display: flex;
     align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
     border-radius: 50%;
     &--pos {
         background-color:$c-green;
+        margin-bottom: 16px;
     }
     &--neg {
         background-color: $c-red;
@@ -86,8 +90,14 @@ $c-red: #EB4343;
 
 .share{
     margin-left: auto;
+    display: inline-block;
 }
-
+.comment {
+    display: inline-block;
+    &__word {
+        display: inline-block;
+    }
+}
 .rate_icon:active{
     color:red;
     animation-duration: 2s;
